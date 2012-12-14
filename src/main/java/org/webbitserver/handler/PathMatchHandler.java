@@ -33,4 +33,9 @@ public class PathMatchHandler implements HttpHandler {
             control.nextHandler();
         }
     }
+
+    public boolean valid(String path) {
+        Matcher matcher = pathPattern.matcher(path);
+        if (matcher.matches()) return true; else return false;
+    }
 }
